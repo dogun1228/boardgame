@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>Gametest</title>
+	</head>
+	<body>
+		<div id="name">TestName</div>
+	</body>
+	<script src="/socket.io/socket.io.js"></script>
+	<script src="//code.jquery.com/jquery-1.11.1.js"></script>
+	<script src="/key.js"></script>
+	<script src="/app.js"></script>
+	<script>
+		var socket = io()
+		socket.on('change name', name => {
+			$('#name').html(name)
+			console.log(name)
+		})
+	</script>
+</html>
