@@ -1,19 +1,28 @@
-const __keys__ = new Set ([]);
-const __keyEvents__ = new Map ();
+class __key__ {
+	constructor() {
+		this.__keys__ = new Set([])
+		this.__keyEvents__ = new Map()
+	}
 
-window.onkeydown = () => {
-  __keys__.add (event.keyCode); //keys 셋에 키코드를 넣는다
-  __keyEvents__.has (event.keyCode) && __keyEvents__.get (event.keyCode) (); //keyEvents 맵에 키코드를 찾아보고 실행
-};
+	keyTest(keyCode) {
+		this.__keys__.has(keyCode)
+	}
 
-window.onkeyup = () => {
-  __keys__.delete (event.keyCode); //키를 떼면 keys 셋에서 키코드를 제거
-};
+	addKeyEvent(keyCode, callback) {
+		this.__keyEvents__.set(keyCode, callback)
+	}
 
-function keyTest (keyCode) {
-  __keys__.has (keyCode);
+	onkeydown() {
+		this.__keys__.add(event.keyCode) //keys 셋에 키코드를 넣는다
+		this.__keyEvents__.has(event.keyCode) && this.__keyEvents__.get(event.keyCode)() //keyEvents 맵에 키코드를 찾아보고 실행
+	}
+
+	onkeyup() {
+		this.__keys__.delete(event.keyCode) //키를 떼면 keys 셋에서 키코드를 제거
+	}
 }
 
-function addKeyEvent (keyCode, callback) {
-  __keyEvents__.set (keyCode, callback);
-}
+const keyBinder = new __key__()
+
+window.onkeydown = keyBinder.onkeydown.bind(keyBinder)
+window.onkeyup = keyBinder.onkeyup.bind(keyBinder)

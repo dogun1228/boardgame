@@ -7,16 +7,16 @@
 	</head>
 	<body>
 		<div id="name">TestName</div>
+		<canvas id="main" width="800" height="600"></canvas>
 	</body>
+	<style>
+		canvas {
+			border: 1px solid black;
+		}
+	</style>
 	<script src="/socket.io/socket.io.js"></script>
 	<script src="//code.jquery.com/jquery-1.11.1.js"></script>
 	<script src="/key.js"></script>
+	<script src="/canvas.js"></script>
 	<script src="/app.js"></script>
-	<script>
-		var socket = io()
-		socket.on('change name', name => {
-			$('#name').html(name)
-			console.log(name)
-		})
-	</script>
 </html>
