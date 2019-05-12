@@ -30,7 +30,14 @@ socket.on('update', chars => {
 	canvas.clear()
 	chars.forEach(element => {
 		let char = element[1]
-		canvas.drawCircle(char.x, char.y, 10, char.color)
+		canvas.drawRect(char.x, char.y, 30, 30, char.mainColor, true, 'fill')
+		canvas.drawCircle(char.x, char.y, 10, char.subColor)
 		console.log(char)
 	})
+})
+
+$('#setColor').click(() => {
+	let mainColor = prompt('메인 색을 입력하세요', '#000000')
+	let subColor = prompt('보조 색을 입력하세요', '#FFFFFF')
+	socket.emit('setColor', mainColor, subColor)
 })

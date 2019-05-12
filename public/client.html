@@ -6,12 +6,35 @@
 		<title>Gametest</title>
 	</head>
 	<body>
-		<div id="name">TestName</div>
 		<canvas id="main" width="800" height="600"></canvas>
+		<div class="btnSet">
+			<button id="setColor">색 변경</button>
+		</div>
+		<footer>
+			<div id="name">TestName</div>
+		</footer>
 	</body>
+	<link href="https://fonts.googleapis.com/css?family=Black+Han+Sans" rel="stylesheet" />
 	<style>
+		* {
+			font-family: 'Black Han Sans', sans-serif;
+		}
+		body {
+			margin: 0;
+		}
 		canvas {
 			border: 1px solid black;
+		}
+		button {
+			border: none;
+			border-radius: 20px;
+			margin: 1em 0.5em;
+			padding: 1em 0.5em;
+			font-size: 20px;
+			text-align: center;
+		}
+		button:hover {
+			border: 1px solid silver;
 		}
 	</style>
 	<script src="/socket.io/socket.io.js"></script>
