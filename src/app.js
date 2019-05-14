@@ -1,5 +1,5 @@
-server = require('./server/index.js')
+const server = require('./server')
 
-PORT = 3000
+const PORT = 3000
 
 server.listen(PORT, () => console.log('server test start!'))

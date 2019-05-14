@@ -2,7 +2,7 @@ const express = require('express')
 const http = require('http')
 const socketIo = require('socket.io')
 
-const Character = require('./Character.js')
+const Character = require('./Character')
 
 const app = express()
 const server = http.Server(app)
