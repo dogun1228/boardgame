@@ -1,3 +1,4 @@
+const path = require('path')
 const express = require('express')
 const http = require('http')
 const socketIo = require('socket.io')
@@ -9,10 +10,10 @@ const server = http.Server(app)
 const io = socketIo(server)
 
 app.get('/', (req, res) => {
-	res.sendFile(`${__dirname.replace('\\server', '')}\\client\\client.html`)
+	res.sendFile(path.resolve(__dirname, '../client/client.html'))
 })
 
-app.use(express.static(`${__dirname.replace('\\server', '')}\\client`))
+app.use(express.static(path.resolve(__dirname, '../client')))
 
 const characters = new Map()
 
