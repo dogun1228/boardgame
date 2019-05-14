@@ -29,7 +29,7 @@ keyBinder.addKeyEvent(68, () => {
 socket.on('update', chars => {
 	canvas.clear()
 	chars.forEach(element => {
-		let char = element[1]
+		const char = element[1]
 		canvas.drawRect(char.x, char.y, 30, 30, char.mainColor, true, 'fill')
 		canvas.drawCircle(char.x, char.y, 10, char.subColor)
 		console.log(char)
@@ -37,7 +37,7 @@ socket.on('update', chars => {
 })
 
 $('#setColor').click(() => {
-	let mainColor = prompt('메인 색을 입력하세요', '#000000')
-	let subColor = prompt('보조 색을 입력하세요', '#FFFFFF')
+	const mainColor = prompt('메인 색을 입력하세요', '#000000')
+	const subColor = prompt('보조 색을 입력하세요', '#FFFFFF')
 	socket.emit('setColor', mainColor, subColor)
 })

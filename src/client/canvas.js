@@ -8,7 +8,7 @@ class Canvas {
 		this.canvas = canvas
 		this.ctx = canvas.getContext('2d')
 		this.background = background
-		this.setcolor(background)
+		this.setColor(background)
 		this.ctx.fillRect(0, 0, canvas.width, canvas.height)
 	}
 	/**
@@ -19,7 +19,7 @@ class Canvas {
 	 * @param {*} color
 	 */
 	drawCircle(x, y, radius, color = '#000000') {
-		this.setcolor(color)
+		this.setColor(color)
 		this.ctx.beginPath()
 		this.ctx.arc(x, y, radius, 0, Math.PI * 2, true)
 		this.ctx.fill()
@@ -39,7 +39,7 @@ class Canvas {
 			x -= width / 2
 			y -= height / 2
 		}
-		this.setcolor(color)
+		this.setColor(color)
 		this.ctx[`${mode}Rect`](x, y, width, height)
 	}
 	/**
@@ -47,11 +47,11 @@ class Canvas {
 	 * @param {color} color
 	 * @private
 	 */
-	setcolor(color) {
+	setColor(color) {
 		this.ctx.fillStyle = color
 	}
 	clear() {
-		this.setcolor(this.background)
+		this.setColor(this.background)
 		this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height)
 	}
 }
