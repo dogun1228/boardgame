@@ -1,0 +1,20 @@
+* {
+	font-family: 'Black Han Sans', sans-serif;
+}
+body {
+	margin: 0;
+}
+canvas {
+	border: 1px solid black;
+}
+button {
+	border: none;
+	border-radius: 20px;
+	margin: 1em 0.5em;
+	padding: 1em 0.5em;
+	font-size: 20px;
+	text-align: center;
+}
+button:hover {
+	border: 1px solid silver;
+}

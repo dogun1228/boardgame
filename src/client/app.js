@@ -1,3 +1,14 @@
+import Canvas from './Canvas'
+import KeyBinder from './KeyBinder'
+import $ from 'jquery'
+import io from 'socket.io-client'
+
+import './style.css'
+
+const keyBinder = new KeyBinder()
+window.onkeydown = keyBinder.onkeydown.bind(keyBinder)
+window.onkeyup = keyBinder.onkeyup.bind(keyBinder)
+
 const socket = io()
 const canvas = new Canvas(document.getElementById('main'), '#F6cbd5')
 

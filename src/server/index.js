@@ -10,10 +10,10 @@ const server = http.Server(app)
 const io = socketIo(server)
 
 app.get('/', (req, res) => {
-	res.sendFile(path.resolve(__dirname, '../client/client.html'))
+	res.sendFile(path.resolve(__dirname, '../dist/index.html'))
 })
 
-app.use(express.static(path.resolve(__dirname, '../client')))
+app.use(express.static(path.resolve(__dirname, '../dist')))
 
 const characters = new Map()
 

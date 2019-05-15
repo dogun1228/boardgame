@@ -1,4 +1,4 @@
-class Canvas {
+export default class Canvas {
 	/**
 	 * 캔버스 Element를 받아서 관리해줍니다
 	 * @param {canvas} canvas

@@ -1,4 +1,4 @@
-class __key {
+export default class Keybinder {
 	constructor() {
 		this.__keys = new Set()
 		this.__keyEvents = new Map()
@@ -21,8 +21,3 @@ class __key {
 		this.__keys.delete(event.keyCode) //키를 떼면 keys 셋에서 키코드를 제거
 	}
 }
-
-const keyBinder = new __key()
-
-window.onkeydown = keyBinder.onkeydown.bind(keyBinder)
-window.onkeyup = keyBinder.onkeyup.bind(keyBinder)
